@@ -1,2 +1,4 @@
 # voltmeter-clock
-A clock that uses three analog voltmeters to display time, relative humidity and temperature.
+board: NodeMCU ESP8266
+humidity and temperature sensor: GY-21
+RTC: DS3231
