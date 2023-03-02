@@ -4,7 +4,7 @@ RTC_DS3231 rtc;
 
 // settings
 const double maxV = 3.3;  // max voltage output by pins
-const double desiredMaxV = 3; // max voltage of analog voltmeter
+const double desiredMaxV = 3; // max measureable voltage of analog voltmeter
 const int maxPWM = 1023;
 const double desiredMaxPWM = maxPWM * desiredMaxV / maxV;  // PWM value that gives the desired max voltage
 // time
@@ -36,7 +36,7 @@ int rh;
 // states
 int showTemp = 0; // temp & RH instead of time
 int rtcPresent;
-int settingTime = 0;  // 0: not, 1: h, 2: min, 3: sec
+int settingTime = 0;  // 0: not setting time, 1: h, 2: min
 int prevPush = 0;
 int animation = 0;
 
@@ -281,7 +281,6 @@ void setup() {
   }
   // pins
   pinMode(buttonPin, INPUT_PULLUP);
-  //pinMode(buttonPin2, INPUT_PULLUP);
   pinMode(secPin, OUTPUT);  // also RH
   pinMode(minPin, OUTPUT);  // also temp
   pinMode(hPin, OUTPUT);
